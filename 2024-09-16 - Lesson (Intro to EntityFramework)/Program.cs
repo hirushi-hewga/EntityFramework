@@ -4,7 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            AirplaneDbContext dbContext = new AirplaneDbContext();
+            dbContext.Clients.Add(new Client()
+            {
+                Name = "Vova",
+                Email = "vova@gmail.com",
+                Birthday = new DateTime(2000,5,12)
+            });
+            dbContext.SaveChanges();
+
+
+            foreach (var client in dbContext.Clients)
+            {
+                Console.WriteLine($"{client.Name} . {client.Email} . {client.Birthday}");
+            }
         }
     }
 }
