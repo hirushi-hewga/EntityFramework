@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2024_09_16___Lesson__Intro_to_EntityFramework_
+namespace _2024_09_18___Lesson__Intro_to_EntityFramework_
 {
     public class AirplaneDbContext
     {
@@ -12,23 +13,29 @@ namespace _2024_09_16___Lesson__Intro_to_EntityFramework_
         // Clients
         // Flights
         // Airplane
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Airplane> Airplanes { get; set; }
+        public DbSet<Flight> Flights { get; set; }
     }
     //Entities
-    class Client
+
+    public class Client
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
+        public ICollection<Flight> Flights { get; set; }
     }
-    class Airplane
+    public class Airplane
     {
         public int Id { get; set; }
         public string Model { get; set; }
         public int MaxPassangers { get; set; }
         public ICollection<Flight> Flights { get; set; }
     }
-    class Flight
+    public class Flight
     {
         public int Id { get; set; }
         public DateTime ArrivalTime { get; set; }
