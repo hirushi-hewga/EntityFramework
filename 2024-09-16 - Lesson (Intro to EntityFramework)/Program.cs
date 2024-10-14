@@ -18,6 +18,13 @@
             {
                 Console.WriteLine($"{client.Name} . {client.Email} . {client.Birthday}");
             }
+            var filteredFlight = dbContext.Flights
+                .Where(f => f.ArrivalCity == "Lviv")
+                .OrderBy(f => f.ArrivalTime);
+            foreach (var flight in filteredFlight)
+            {
+                Console.WriteLine($"{flight.ArrivalCity} - {flight.DepartureCity} - {flight.ArrivalTime}");
+            }
         }
     }
 }
