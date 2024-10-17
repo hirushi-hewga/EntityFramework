@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -169,5 +170,13 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         public Category Category { get; set; }
         public int CategoryId { get; set; }
         public ICollection<Track> Tracks { get; set; }
+    }
+
+    public class PlaylistTrack
+    {
+        public int PlaylistId { get; set; }
+        public Playlist Playlist { get; set; }
+        public int TrackId { get; set; }
+        public Track Track { get; set; }
     }
 }
