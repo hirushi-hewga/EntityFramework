@@ -13,7 +13,7 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
     {
         public MusicDbContext()
         {
-            //this.Database.EnsureDeleted();
+            this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
         }
         public DbSet<Country> Countries { get; set; }
@@ -27,7 +27,7 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"Data Source=WINDEV2401EVAL\SQLEXPRESS;
-                                         Initial Catalog=MusicDb_PP1402
+                                          Initial Catalog=MusicDb_PP1402
                                           Integrated Security=True;
                                           Connect Timeout=2;
                                           Encrypt=True;
@@ -108,6 +108,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         [Required,MaxLength(100)]
         public string Name { get; set; }
         public ICollection<Album> Albums { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name}";
+        }
     }
 
     public class Artist
@@ -120,6 +124,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         public Country Country { get; set; }
         public int CountryId { get; set; }
         public ICollection<Album> Albums { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name} , Surname : {Surname}";
+        }
     }
 
     public class Genre
@@ -128,6 +136,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         [Required,MaxLength(100)]
         public string Name { get; set; }
         public ICollection<Album> Albums { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name}";
+        }
     }
 
     public class Album
@@ -141,6 +153,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         public Genre Genre { get; set; }
         public int GenreId { get; set; }
         public ICollection<Track> Tracks { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name} , YearOfRelease : {YearOfRelease}";
+        }
     }
 
     public class Track
@@ -152,6 +168,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         public Album Album { get; set; }
         public int AlbumId { get; set; }
         public ICollection<Playlist> Playlists { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name} , Duration : {Duration}";
+        }
     }
 
     public class Category
@@ -160,6 +180,10 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         [Required,MaxLength(100)]
         public string Name { get; set; }
         public ICollection<Playlist> Playlists { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name}";
+        }
     }
 
     public class Playlist
@@ -170,13 +194,9 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         public Category Category { get; set; }
         public int CategoryId { get; set; }
         public ICollection<Track> Tracks { get; set; }
-    }
-
-    public class PlaylistTrack
-    {
-        public int PlaylistId { get; set; }
-        public Playlist Playlist { get; set; }
-        public int TrackId { get; set; }
-        public Track Track { get; set; }
+        public override string ToString()
+        {
+            return $"Name : {Name}";
+        }
     }
 }
