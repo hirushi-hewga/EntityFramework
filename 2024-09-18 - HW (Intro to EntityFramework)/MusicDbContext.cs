@@ -13,7 +13,6 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
     {
         public MusicDbContext()
         {
-            this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
         }
         public DbSet<Country> Countries { get; set; }
@@ -29,7 +28,7 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
             optionsBuilder.UseSqlServer(@"Data Source=WINDEV2401EVAL\SQLEXPRESS;
                                           Initial Catalog=MusicDb_PP1402
                                           Integrated Security=True;
-                                          Connect Timeout=2;
+                                          Connect Timeout=5;
                                           Encrypt=True;
                                           Trust Server Certificate=True;
                                           Application Intent=ReadWrite;
@@ -93,7 +92,7 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
             });
             modelBuilder.Entity<Playlist>().HasData(new Playlist[]
             {
-                new Playlist { Id = 1, Name = "Pop Hits", CategoryId = 1 },
+                new Playlist { Id = 1, Name = "Pop Hits", CategoryId = 1, },
                 new Playlist { Id = 2, Name = "R&B Selection", CategoryId = 2 },
                 new Playlist { Id = 3, Name = "Mood Melodies", CategoryId = 3 },
                 new Playlist { Id = 4, Name = "Emotional", CategoryId = 4 },
