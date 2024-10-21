@@ -20,7 +20,7 @@ namespace _2024_09_20___Lesson__Migrations_
         public AirplaneDbContext()
         {
             //this.Database.EnsureDeleted();
-            this.Database.EnsureCreated();
+            //this.Database.EnsureCreated();
         }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Airplane> Airplanes { get; set; }
