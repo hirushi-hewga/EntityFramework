@@ -25,14 +25,13 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Data Source=WINDEV2401EVAL\SQLEXPRESS;
-                                          Initial Catalog=MusicDb_PP1402
-                                          Integrated Security=True;
-                                          Connect Timeout=5;
-                                          Encrypt=True;
-                                          Trust Server Certificate=True;
-                                          Application Intent=ReadWrite;
-                                          Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"workstation id=14825367_Database.mssql.somee.com;packet size=4096;
+                                          user id=PIKLaoaoaoao_SQLLogin_1;
+                                          pwd=wfnfq5fwb3;
+                                          data source=14825367_Database.mssql.somee.com;
+                                          persist security info=False;
+                                          initial catalog=14825367_Database;
+                                          TrustServerCertificate=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
