@@ -13,7 +13,7 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
     {
         public MusicDbContext()
         {
-            this.Database.EnsureCreated();
+            //this.Database.EnsureCreated();
         }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Artist> Artists { get; set; }
@@ -25,12 +25,13 @@ namespace _2024_09_18___HW__Intro_to_EntityFramework_
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"workstation id=14825367_Database.mssql.somee.com;packet size=4096;
-                                          user id=PIKLaoaoaoao_SQLLogin_1;
-                                          pwd=wfnfq5fwb3;
-                                          data source=14825367_Database.mssql.somee.com;
+            optionsBuilder.UseSqlServer(@"workstation id=MusicDatabase_PPK14222.mssql.somee.com;
+                                          packet size=4096;
+                                          user id=JJJkjswk_SQLLogin_1;
+                                          pwd=fryp4h2st6;
+                                          data source=MusicDatabase_PPK14222.mssql.somee.com;
                                           persist security info=False;
-                                          initial catalog=14825367_Database;
+                                          initial catalog=MusicDatabase_PPK14222;
                                           TrustServerCertificate=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
