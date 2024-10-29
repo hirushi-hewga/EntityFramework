@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-18 - Lesson (Intro 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-18 - HW (Intro to EntityFramework)", "2024-09-18 - HW (Intro to EntityFramework)\2024-09-18 - HW (Intro to EntityFramework).csproj", "{BFB38A2C-B05A-4CA7-B42D-259FD2AF9612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2024-09-20 - Lesson (Migrations)", "2024-09-20 - Lesson (Migrations)\2024-09-20 - Lesson (Migrations).csproj", "{700E5D53-C379-4BA3-9E0F-2519049349CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-20 - Lesson (Migrations)", "2024-09-20 - Lesson (Migrations)\2024-09-20 - Lesson (Migrations).csproj", "{700E5D53-C379-4BA3-9E0F-2519049349CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2024-09-20 - HW (Migrations)", "2024-09-20 - HW (Migrations)\2024-09-20 - HW (Migrations).csproj", "{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{700E5D53-C379-4BA3-9E0F-2519049349CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{700E5D53-C379-4BA3-9E0F-2519049349CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{700E5D53-C379-4BA3-9E0F-2519049349CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
