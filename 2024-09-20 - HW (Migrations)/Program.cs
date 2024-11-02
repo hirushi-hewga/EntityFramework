@@ -25,12 +25,9 @@ namespace _2024_09_20___HW__Migrations_
         {
             MusicDbContext dbContext = new MusicDbContext();
 
-            // 1
             //GetTracksAboveAVG(dbContext);
 
-
-            // 2
-            Top3TracksAndAlbumsByArtist(dbContext);
+            //Top3TracksAndAlbumsByArtist(dbContext);
 
 
 
