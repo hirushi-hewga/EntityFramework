@@ -6,7 +6,7 @@ namespace _2024_09_20___HW__Migrations_
 {
     internal class Program
     {
-        public static void Tracks(MusicDbContext dbContext)
+        public static void TracksAboveAVG(MusicDbContext dbContext)
         {
             var tracks = dbContext.Tracks.Select(t => t);
             double listeningAVG = dbContext.Tracks.Average(t => t.Quantity);
@@ -17,25 +17,23 @@ namespace _2024_09_20___HW__Migrations_
                                          $"{item.Duration.Second:00}    " +
                               $"Quantity : {item.Quantity}");
         }
+        public static void Top3TracksAndAlbumsByArtist(MusicDbContext dbContext)
+        {
+            
+        }
         static void Main(string[] args)
         {
             MusicDbContext dbContext = new MusicDbContext();
 
             // 1
-            Tracks(dbContext);
-
-            #region 2
+            //GetTracksAboveAVG(dbContext);
 
 
-            //foreach (var item in dbContext.Artists)
-            //{
-            //    WriteLine($"{item.Name} :");
-            //    var tracks = dbContext.Albums.Include(al => al.Artist)
-            //        .Include(ar => ar.Tracks).ToList();
-            //}
+            // 2
+            Top3TracksAndAlbumsByArtist(dbContext);
 
 
-            #endregion
+
         }
     }
 }
