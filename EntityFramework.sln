@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-20 - Lesson (Migrat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-20 - HW (Migrations)", "2024-09-20 - HW (Migrations)\2024-09-20 - HW (Migrations).csproj", "{CFEAA8F6-15E0-4386-B30B-BB4D506DBB56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2024-09-23 - Lesson (Fluient API)", "2024-09-23 - Lesson (Fluient API)\2024-09-23 - Lesson (Fluient API).csproj", "{C4EEECC4-B874-4BB7-BF1F-18D23B249887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-23 - Lesson (Fluient API)", "2024-09-23 - Lesson (Fluient API)\2024-09-23 - Lesson (Fluient API).csproj", "{C4EEECC4-B874-4BB7-BF1F-18D23B249887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2024-09-23 - HW (Fluient API)", "2024-09-23 - HW (Fluient API)\2024-09-23 - HW (Fluient API).csproj", "{C2D367C9-6157-4A8F-BB10-A86F20D6877B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C4EEECC4-B874-4BB7-BF1F-18D23B249887}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4EEECC4-B874-4BB7-BF1F-18D23B249887}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4EEECC4-B874-4BB7-BF1F-18D23B249887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D367C9-6157-4A8F-BB10-A86F20D6877B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D367C9-6157-4A8F-BB10-A86F20D6877B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D367C9-6157-4A8F-BB10-A86F20D6877B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D367C9-6157-4A8F-BB10-A86F20D6877B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
