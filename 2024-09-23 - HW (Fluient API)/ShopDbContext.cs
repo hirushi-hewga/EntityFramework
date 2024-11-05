@@ -22,14 +22,14 @@ namespace _2024_09_23___HW__Fluient_API_
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Data Source=WINDEV2401EVAL\SQLEXPRESS;
-                                         Initial Catalog=AirportDb_0918
-                                          Integrated Security=True;
-                                          Connect Timeout=2;
-                                          Encrypt=True;
-                                          Trust Server Certificate=True;
-                                          Application Intent=ReadWrite;
-                                          Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"workstation id=ShopDb14222.mssql.somee.com;
+                                          packet size=4096;
+                                          user id=HCisijsjJjd_SQLLogin_1;
+                                          pwd=h1br7xn9bu;
+                                          data source=ShopDb14222.mssql.somee.com;
+                                          persist security info=False;
+                                          initial catalog=ShopDb14222;
+                                          TrustServerCertificate=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
