@@ -17,9 +17,22 @@ namespace _2024_09_20___HW__Migrations_
                                          $"{item.Duration.Second:00}    " +
                               $"Quantity : {item.Quantity}");
         }
-        public static void Top3TracksAndAlbumsByArtist(MusicDbContext dbContext)
+        public static void Top3TracksByRating(MusicDbContext dbContext)
         {
-            
+            var top3 = dbContext.Albums.Include(al => al.Tracks).Include(al => al.Artist).OrderByDescending(t => t.Rating).Take(3);
+            foreach (var item in top3)
+                WriteLine($"Name : {item.Name}" +
+                          $"\nYear of Release : {item.YearOfRelease.ToShortDateString()}" +
+                          $"\nRating : {item.Rating}\n");
+        }
+        public static void TrackSearchByName(MusicDbContext dbContext, string str)
+        {
+            var tracks = dbContext.Tracks.Where(t => t.Name.Contains(str));
+            foreach (var item in tracks)
+                WriteLine($"Name : {item.Name,-24}" +
+                              $"Duration : {item.Duration.Minute}:" +
+                                         $"{item.Duration.Second:00}    " +
+                              $"Quantity : {item.Quantity}");
         }
         static void Main(string[] args)
         {
@@ -27,10 +40,10 @@ namespace _2024_09_20___HW__Migrations_
 
             //GetTracksAboveAVG(dbContext);
 
-            //Top3TracksAndAlbumsByArtist(dbContext);
+            //Top3TracksByRating(dbContext);
 
-
-
+            string str = "Do";
+            TrackSearchByName(dbContext, str);
         }
     }
 }
