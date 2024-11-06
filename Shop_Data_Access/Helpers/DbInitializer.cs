@@ -1,12 +1,12 @@
-﻿using _2024_09_25___Lesson__Loading_Data_.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Shop_Data_Access.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2024_09_25___Lesson__Loading_Data_.Helpers
+namespace Shop_Data_Access.Helpers
 {
     public static class DbInitializer
     {

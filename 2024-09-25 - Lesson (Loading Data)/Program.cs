@@ -1,14 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Shop_Data_Access;
 using static System.Console;
 
 namespace _2024_09_25___Lesson__Loading_Data_
 {
     internal class Program
     {
-        private static ShopDbContext GetDbContext()
-        {
-            return new ShopDbContext();
-        }
+        private static ShopDbContext GetDbContext() => new ShopDbContext();
 
         static void Main(string[] args)
         {
@@ -24,6 +22,7 @@ namespace _2024_09_25___Lesson__Loading_Data_
             }
 
             var product = GetDbContext().Products.Find(1);
+            GetDbContext().Entry(product).Reference(p => p.Category).Load();
             WriteLine($"Name : {product.Name} ,  Category : {product.Category?.Name}");
 
 

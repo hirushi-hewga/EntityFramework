@@ -1,4 +1,4 @@
-﻿namespace _2024_09_25___Lesson__Loading_Data_.Entities
+﻿namespace Shop_Data_Access.Entities
 {
     public class Shop
     {
