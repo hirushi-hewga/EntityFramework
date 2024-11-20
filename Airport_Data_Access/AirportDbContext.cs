@@ -1,4 +1,5 @@
 ﻿using Airport_Data_Access.Entities;
+using Airport_Data_Access.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -104,7 +105,15 @@ namespace Airport_Data_Access
 
             #endregion
 
+
             // Initialization
+
+            modelBuilder.SeedAccounts();
+            modelBuilder.SeedAircraftTypes();
+            modelBuilder.SeedCountries();
+            modelBuilder.SeedAircrafts();
+            modelBuilder.SeedCities();
+            modelBuilder.SeedFlights();
         }
     }
 }

@@ -1,10 +1,12 @@
-﻿namespace _2024_09_25___HW__Loading_Data_
+﻿using Airport_Data_Access;
+
+namespace _2024_09_25___HW__Loading_Data_
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            AirportDbContext dbContext = new AirportDbContext();
         }
     }
 }
