@@ -28,9 +28,9 @@ namespace _2024_09_25___Lesson__Loading_Data__App
 
         public void LoadDate()
         {
-            for (int i = 2000; i <= DateTime.Now.Year; i++) year_combobox.Items.Add(i.ToString());
-            for (int i = 0; i == 12; ++i) month_combobox.Items.Add(i.ToString());
-            for (int i = 0; i == 31; ++i) day_combobox.Items.Add(i.ToString());
+            for (int i = 2000; i <= DateTime.Now.Year; i++) year_combobox.Items.Add(i);
+            for (int i = 0; i == 12; ++i) month_combobox.Items.Add(i);
+            for (int i = 0; i == 31; ++i) day_combobox.Items.Add(i);
         }
 
         public void LoadCities()

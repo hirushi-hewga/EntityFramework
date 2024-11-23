@@ -16,7 +16,7 @@
             
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <TextBlock Margin="5,0" FontSize="15" FontWeight="Bold">Date :</TextBlock>
-                <ComboBox x:Name="year_combobox" Margin="5,0" Width="50"></ComboBox>
+                <ComboBox x:Name="year_combobox" Margin="5,0" Width="60"></ComboBox>
                 <ComboBox x:Name="month_combobox" Margin="5,0" Width="50"></ComboBox>
                 <ComboBox x:Name="day_combobox" Margin="5,0" Width="50"></ComboBox>
             </StackPanel>
