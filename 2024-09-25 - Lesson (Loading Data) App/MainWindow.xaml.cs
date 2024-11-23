@@ -24,13 +24,14 @@ namespace _2024_09_25___Lesson__Loading_Data__App
             InitializeComponent();
             LoadDate();
             LoadCities();
+            UpdateButtonState();
         }
 
         public void LoadDate()
         {
             for (int i = 2000; i <= DateTime.Now.Year; i++) year_combobox.Items.Add(i);
-            for (int i = 0; i == 12; ++i) month_combobox.Items.Add(i);
-            for (int i = 0; i == 31; ++i) day_combobox.Items.Add(i);
+            for (int i = 0; i <= 12; i++) month_combobox.Items.Add(i);
+            for (int i = 0; i <= 31; i++) day_combobox.Items.Add(i);
         }
 
         public void LoadCities()
@@ -39,9 +40,17 @@ namespace _2024_09_25___Lesson__Loading_Data__App
             foreach (var item in cities) city_combobox.Items.Add(item.CityName);
         }
 
-        private void Button_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void UpdateButtonState()
         {
-            year_combobox.IsEnabled = (year_combobox.SelectedItem == null && month_combobox.SelectedItem == null && day_combobox.SelectedItem == null && city_combobox.SelectedItem == null) ? false : true;
+            button.IsEnabled = (year_combobox.SelectedItem == null && 
+                                month_combobox.SelectedItem == null && 
+                                day_combobox.SelectedItem == null && 
+                                city_combobox.SelectedItem == null) ? false : true;
+        }
+
+        private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateButtonState();
         }
     }
 }
