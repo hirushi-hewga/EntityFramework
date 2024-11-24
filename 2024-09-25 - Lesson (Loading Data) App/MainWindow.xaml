@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:_2024_09_25___Lesson__Loading_Data__App"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="450">
-    <Grid>
+    <Grid Background="DarkSlateGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
-        <StackPanel Margin="5">
+        
+        <StackPanel Margin="5" Background="LightSkyBlue">
             
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                 <TextBlock Margin="5,0" FontSize="15" FontWeight="Bold">Date :</TextBlock>
@@ -27,9 +27,43 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
-                <Button x:Name="button" Margin="5,0" Padding="5,0" Width="auto" FontWeight="Bold" Content="Пошук"></Button>
+                <Button x:Name="button" Margin="5,0" Padding="5,0" Width="auto" FontWeight="Bold" Content="Пошук" Click="button_Click"></Button>
             </StackPanel>
             
         </StackPanel>
+
+        <ScrollViewer Width="400" Grid.Row="1" Margin="0,15" VerticalScrollBarVisibility="Auto">
+
+            <ListBox x:Name="listBox" Background="Black" Padding="5" IsHitTestVisible="False">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Background="DimGray" Width="370" HorizontalAlignment="Center" IsHitTestVisible="False">
+                            <Border Background="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Arrival Country :" Foreground="White"/>
+                                <TextBlock Text="{Binding ArrivalCountry}" Margin="0,5" Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Arrival City :" Foreground="White"/>
+                                <TextBlock Text="{Binding ArrivalCity}" Margin="0,5" Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Flight Date :" Foreground="White"/>
+                                <TextBlock Text="{Binding FlightDate}" Margin="0,5" Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Aircraft Type :" Foreground="White"/>
+                                <TextBlock Text="{Binding AircraftType}" Margin="0,5" Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Aircraft Model :" Foreground="White"/>
+                                <TextBlock Text="{Binding AircraftModel}" Margin="0,5" Foreground="White"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+        </ScrollViewer>
     </Grid>
 </Window>
