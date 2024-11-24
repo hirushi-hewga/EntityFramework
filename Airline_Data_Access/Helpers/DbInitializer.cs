@@ -23,7 +23,27 @@ namespace Airport_Data_Access.Helpers
             modelBuilder.Entity<Flight>().HasData(new Flight[]
             {
                 new Flight() { FlightId = 1, FlightDate = new DateTime(2024, 11, 20), ArrivalCityId = 1, AircraftId = 1 },
-                new Flight() { FlightId = 2, FlightDate = new DateTime(2024, 11, 21), ArrivalCityId = 2, AircraftId = 2 }
+                new Flight() { FlightId = 2, FlightDate = new DateTime(2024, 11, 21), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 3, FlightDate = new DateTime(2024, 11, 22), ArrivalCityId = 1, AircraftId = 1 },
+                new Flight() { FlightId = 4, FlightDate = new DateTime(2024, 11, 23), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 5, FlightDate = new DateTime(2024, 11, 24), ArrivalCityId = 3, AircraftId = 1 },
+                new Flight() { FlightId = 6, FlightDate = new DateTime(2024, 11, 25), ArrivalCityId = 4, AircraftId = 2 },
+                new Flight() { FlightId = 7, FlightDate = new DateTime(2024, 11, 26), ArrivalCityId = 1, AircraftId = 1 },
+                new Flight() { FlightId = 8, FlightDate = new DateTime(2024, 11, 27), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 9, FlightDate = new DateTime(2024, 11, 28), ArrivalCityId = 3, AircraftId = 1 },
+                new Flight() { FlightId = 10, FlightDate = new DateTime(2024, 11, 29), ArrivalCityId = 4, AircraftId = 2 },
+                new Flight() { FlightId = 11, FlightDate = new DateTime(2024, 11, 30), ArrivalCityId = 1, AircraftId = 1 },
+                new Flight() { FlightId = 12, FlightDate = new DateTime(2024, 12, 01), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 13, FlightDate = new DateTime(2024, 12, 02), ArrivalCityId = 3, AircraftId = 1 },
+                new Flight() { FlightId = 14, FlightDate = new DateTime(2024, 12, 03), ArrivalCityId = 4, AircraftId = 2 },
+                new Flight() { FlightId = 15, FlightDate = new DateTime(2024, 12, 04), ArrivalCityId = 1, AircraftId = 1 },
+                new Flight() { FlightId = 16, FlightDate = new DateTime(2024, 12, 05), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 17, FlightDate = new DateTime(2024, 12, 06), ArrivalCityId = 3, AircraftId = 1 },
+                new Flight() { FlightId = 18, FlightDate = new DateTime(2024, 12, 07), ArrivalCityId = 4, AircraftId = 2 },
+                new Flight() { FlightId = 19, FlightDate = new DateTime(2024, 12, 08), ArrivalCityId = 1, AircraftId = 1 },
+                new Flight() { FlightId = 20, FlightDate = new DateTime(2024, 12, 09), ArrivalCityId = 2, AircraftId = 2 },
+                new Flight() { FlightId = 21, FlightDate = new DateTime(2024, 12, 10), ArrivalCityId = 3, AircraftId = 1 },
+                new Flight() { FlightId = 22, FlightDate = new DateTime(2024, 12, 11), ArrivalCityId = 4, AircraftId = 2 }
             });
         }
 
