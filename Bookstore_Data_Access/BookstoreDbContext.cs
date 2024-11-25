@@ -19,13 +19,12 @@ namespace Bookstore_Data_Access
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"workstation id=AirportDbContext_14288.mssql.somee.com;
+            optionsBuilder.UseSqlServer(@"workstation id=Bookstore_Exam.mssql.somee.com;
                                             packet size=4096;
-                                            user id=Huhdfshdsfo_SQLLogin_1;
-                                            pwd=tfnup3tjmy;
-                                            data source=AirportDbContext_14288.mssql.somee.com;
-                                            persist security info=False;
-                                            initial catalog=AirportDbContext_14288;
+                                            user id=EFiopjIOJIEDV_SQLLogin_1;
+                                            pwd=vfjplt2j4f;
+                                            data source=Bookstore_Exam.mssql.somee.com;
+                                            persist security info=False;initial catalog=Bookstore_Exam;
                                             TrustServerCertificate=True");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
