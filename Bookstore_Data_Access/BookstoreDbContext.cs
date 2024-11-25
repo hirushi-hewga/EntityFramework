@@ -122,10 +122,17 @@ namespace Bookstore_Data_Access
         public int BookId { get; set; }
         public string BookName { get; set; }
         public int NumberOfPages { get; set; }
+        public DateTime YearOfRelease { get; set; }
+        public float Cost { get; set; }
+        public float Price { get; set; }
+        public Book ContinuationBook { get; set; }
+        public int ContinuationBookId { get; set; }
         public Author Author { get; set; }
         public int AuthorId { get; set; }
         public Publisher Publisher { get; set; }
         public int PublisherId { get; set; }
+        public Genre Genre { get; set; }
+        public int GenreId { get; set; }
     }
 
     public class Author
@@ -140,6 +147,13 @@ namespace Bookstore_Data_Access
     {
         public int AuthorId { get; set; }
         public string PublisherName { get; set; }
+        public ICollection<Book> Books { get; set; }
+    }
+
+    public class Genre
+    {
+        public int GenreId { get; set; }
+        public string GenreName { get; set; }
         public ICollection<Book> Books { get; set; }
     }
 }
