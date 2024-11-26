@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Bookstore_Data_Access.Entities;
+using Bookstore_Data_Access.Helpers;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,127 +34,74 @@ namespace Bookstore_Data_Access
             base.OnModelCreating(modelBuilder);
 
             // Validation
-            /*
-            #region Account
 
-            modelBuilder.Entity<Account>()
-                .Property(a => a.Username)
-                .HasMaxLength(30)
+            #region Book
+
+            modelBuilder.Entity<Book>()
+                .Property(b => b.BookName)
+                .HasMaxLength(150)
                 .IsRequired();
 
-            modelBuilder.Entity<Account>()
-                .Property(a => a.Password)
-                .HasMaxLength(50)
-                .IsRequired();
+            modelBuilder.Entity<Book>()
+                .Property(b => b.ContinuationBook)
+                .HasMaxLength(150);
 
             #endregion
 
-            #region City
+            #region Author
 
-            modelBuilder.Entity<City>()
-                .Property(c => c.CityName)
+            modelBuilder.Entity<Author>()
+                .Property(a => a.AuthorName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<City>()
-                .HasMany(c => c.Flights)
-                .WithOne(f => f.ArrivalCity)
-                .HasForeignKey(f => f.ArrivalCityId);
+            modelBuilder.Entity<Author>()
+                .Property(a => a.AuthorSurname)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Author>()
+                .HasMany(a => a.Books)
+                .WithOne(b => b.Author)
+                .HasForeignKey(b => b.AuthorId);
 
             #endregion
 
-            #region Country
+            #region Publisher
 
-            modelBuilder.Entity<Country>()
-                .Property(c => c.CountryName)
+            modelBuilder.Entity<Publisher>()
+                .Property(p => p.PublisherName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<Country>()
-                .HasMany(c => c.Cities)
-                .WithOne(c => c.Country)
-                .HasForeignKey(c => c.CountryId);
+            modelBuilder.Entity<Publisher>()
+                .HasMany(p => p.Books)
+                .WithOne(b => b.Publisher)
+                .HasForeignKey(b => b.PublisherId);
 
             #endregion
 
-            #region Aircraft
+            #region Genre
 
-            modelBuilder.Entity<Aircraft>()
-                .Property(a => a.AircraftModel)
+            modelBuilder.Entity<Genre>()
+                .Property(g => g.GenreName)
                 .HasMaxLength(50)
                 .IsRequired();
 
-            modelBuilder.Entity<Aircraft>()
-                .HasMany(a => a.Flights)
-                .WithOne(f => f.Aircraft)
-                .HasForeignKey(f => f.AircraftId);
-
-            #endregion
-
-            #region AircraftType
-
-            modelBuilder.Entity<AircraftType>()
-                .Property(a => a.TypeName)
-                .HasMaxLength(50)
-                .IsRequired();
-
-            modelBuilder.Entity<AircraftType>()
-                .HasMany(a => a.Aircrafts)
-                .WithOne(a => a.AircraftType)
-                .HasForeignKey(a => a.AircraftTypeId);
+            modelBuilder.Entity<Genre>()
+                .HasMany(g => g.Books)
+                .WithOne(b => b.Genre)
+                .HasForeignKey(b => b.GenreId);
 
             #endregion
 
 
             // Initialization
 
-            modelBuilder.SeedAccounts();
-            modelBuilder.SeedAircraftTypes();
-            modelBuilder.SeedCountries();
-            modelBuilder.SeedAircrafts();
-            modelBuilder.SeedCities();
-            modelBuilder.SeedFlights();
-            */
+            modelBuilder.SeedBooks();
+            modelBuilder.SeedAuthors();
+            modelBuilder.SeedPublishers();
+            modelBuilder.SeedGenres();
         }
-    }
-
-    public class Book
-    {
-        public int BookId { get; set; }
-        public string BookName { get; set; }
-        public int NumberOfPages { get; set; }
-        public DateTime YearOfRelease { get; set; }
-        public float Cost { get; set; }
-        public float Price { get; set; }
-        public Book ContinuationBook { get; set; }
-        public int ContinuationBookId { get; set; }
-        public Author Author { get; set; }
-        public int AuthorId { get; set; }
-        public Publisher Publisher { get; set; }
-        public int PublisherId { get; set; }
-        public Genre Genre { get; set; }
-        public int GenreId { get; set; }
-    }
-
-    public class Author
-    {
-        public int AuthorId { get; set; }
-        public string AuthorName { get; set; }
-        public string AuthorSurname { get; set; }
-        public ICollection<Book> Books { get; set; }
-    }
-
-    public class Publisher
-    {
-        public int AuthorId { get; set; }
-        public string PublisherName { get; set; }
-        public ICollection<Book> Books { get; set; }
-    }
-
-    public class Genre
-    {
-        public int GenreId { get; set; }
-        public string GenreName { get; set; }
-        public ICollection<Book> Books { get; set; }
     }
 }
