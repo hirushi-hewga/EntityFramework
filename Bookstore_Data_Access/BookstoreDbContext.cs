@@ -12,12 +12,10 @@ namespace Bookstore_Data_Access
 {
     public partial class BookstoreDbContext : DbContext
     {
-        /*public DbSet<Account> Accounts { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<AircraftType> AircraftTypes { get; set; }
-        public DbSet<Aircraft> Aircrafts { get; set; }
-        public DbSet<Flight> Flights { get; set; }*/
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Genre> Genres { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -46,10 +44,6 @@ namespace Bookstore_Data_Access
                 .Property(b => b.ContinuationBook)
                 .HasMaxLength(150)
                 .IsRequired();
-
-            modelBuilder.Entity<Book>()
-                .Property(b => b.ContinuationBook)
-                .HasMaxLength(150);
 
             #endregion
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookstore_App___Exam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="350">
+        Title="MainWindow" Height="550" Width="350">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -38,5 +38,48 @@
             </StackPanel>
 
         </StackPanel>
+
+        <ScrollViewer Width="auto" Grid.Row="2" Margin="5,10" VerticalScrollBarVisibility="Auto">
+
+            <ListBox x:Name="listBox" Padding="5" IsHitTestVisible="False">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="auto" HorizontalAlignment="Center" IsHitTestVisible="False">
+                            <Border/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Name :"/>
+                                <TextBlock Text="{Binding Name}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Number Of Pages :"/>
+                                <TextBlock Text="{Binding NumberOfPages}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Year Of Release :"/>
+                                <TextBlock Text="{Binding YearOfRelease}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Continuation Book :"/>
+                                <TextBlock Text="{Binding ContinuationBook}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Genre :"/>
+                                <TextBlock Text="{Binding Genre}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Author :"/>
+                                <TextBlock Text="{Binding Author}" Margin="0,5"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5" Text="Publisher :"/>
+                                <TextBlock Text="{Binding Publisher}" Margin="0,5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </ScrollViewer>
+
     </Grid>
 </Window>

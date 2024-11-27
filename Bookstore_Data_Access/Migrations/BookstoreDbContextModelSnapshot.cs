@@ -42,7 +42,7 @@ namespace Bookstore_Data_Access.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.ToTable("Author");
+                    b.ToTable("Authors");
 
                     b.HasData(
                         new
@@ -142,7 +142,7 @@ namespace Bookstore_Data_Access.Migrations
 
                     b.HasIndex("PublisherId");
 
-                    b.ToTable("Book");
+                    b.ToTable("Books");
 
                     b.HasData(
                         new
@@ -150,7 +150,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 1,
                             AuthorId = 1,
                             BookName = "The Great Gatsby",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 10.99f,
                             GenreId = 1,
                             NumberOfPages = 180,
@@ -176,7 +176,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 3,
                             AuthorId = 2,
                             BookName = "Becoming",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 15.99f,
                             GenreId = 2,
                             NumberOfPages = 400,
@@ -189,7 +189,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 4,
                             AuthorId = 3,
                             BookName = "Educated",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 16.5f,
                             GenreId = 2,
                             NumberOfPages = 334,
@@ -202,7 +202,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 5,
                             AuthorId = 4,
                             BookName = "1984",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 13.5f,
                             GenreId = 3,
                             NumberOfPages = 328,
@@ -215,7 +215,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 6,
                             AuthorId = 5,
                             BookName = "To Kill a Mockingbird",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 10.99f,
                             GenreId = 4,
                             NumberOfPages = 281,
@@ -228,7 +228,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 7,
                             AuthorId = 6,
                             BookName = "The Catcher in the Rye",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 11.99f,
                             GenreId = 1,
                             NumberOfPages = 214,
@@ -241,7 +241,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 8,
                             AuthorId = 7,
                             BookName = "The Diary of a Young Girl",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 12.5f,
                             GenreId = 2,
                             NumberOfPages = 283,
@@ -254,7 +254,7 @@ namespace Bookstore_Data_Access.Migrations
                             BookId = 9,
                             AuthorId = 8,
                             BookName = "Sapiens: A Brief History of Humankind",
-                            ContinuationBook = "",
+                            ContinuationBook = "-",
                             Cost = 18.99f,
                             GenreId = 5,
                             NumberOfPages = 443,
@@ -279,7 +279,7 @@ namespace Bookstore_Data_Access.Migrations
 
                     b.HasKey("GenreId");
 
-                    b.ToTable("Genre");
+                    b.ToTable("Genres");
 
                     b.HasData(
                         new
@@ -324,7 +324,7 @@ namespace Bookstore_Data_Access.Migrations
 
                     b.HasKey("PublisherId");
 
-                    b.ToTable("Publisher");
+                    b.ToTable("Publishers");
 
                     b.HasData(
                         new
