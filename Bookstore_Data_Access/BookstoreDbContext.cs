@@ -44,6 +44,11 @@ namespace Bookstore_Data_Access
 
             modelBuilder.Entity<Book>()
                 .Property(b => b.ContinuationBook)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            modelBuilder.Entity<Book>()
+                .Property(b => b.ContinuationBook)
                 .HasMaxLength(150);
 
             #endregion

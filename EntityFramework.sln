@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2024-09-25 - Lesson (Loadin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airline_Data_Access", "Airline_Data_Access\Airline_Data_Access.csproj", "{437E54F8-DB4B-4197-8982-336BEFC41A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore_Data_Access", "Bookstore_Data_Access\Bookstore_Data_Access.csproj", "{8BE6ECF7-1060-4D62-9752-068E32A8FF6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookstore_Data_Access", "Bookstore_Data_Access\Bookstore_Data_Access.csproj", "{8BE6ECF7-1060-4D62-9752-068E32A8FF6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookstore_App - Exam", "Bookstore_App - Exam\Bookstore_App - Exam.csproj", "{DE2F0228-02AD-40F4-8FAB-8C68ADA45FE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{8BE6ECF7-1060-4D62-9752-068E32A8FF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BE6ECF7-1060-4D62-9752-068E32A8FF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BE6ECF7-1060-4D62-9752-068E32A8FF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2F0228-02AD-40F4-8FAB-8C68ADA45FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2F0228-02AD-40F4-8FAB-8C68ADA45FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2F0228-02AD-40F4-8FAB-8C68ADA45FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2F0228-02AD-40F4-8FAB-8C68ADA45FE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
