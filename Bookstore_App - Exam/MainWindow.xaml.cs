@@ -1,4 +1,5 @@
 ﻿using Bookstore_Data_Access;
+using Bookstore_Data_Access.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -36,6 +37,9 @@ namespace Bookstore_App___Exam
         {
             InitializeComponent();
             LoadBooks();
+            LoadAuthors();
+            LoadGenres();
+
         }
 
         public void LoadBooks()
@@ -60,6 +64,49 @@ namespace Bookstore_App___Exam
                     Publisher = b.Publisher.PublisherName
                 })
                 .ToList();
+        }
+
+        public void LoadAuthors()
+        {
+            List<Author> authors = dbContext.Authors.ToList();
+            foreach (var item in authors) author_combobox.Items.Add($"{item.AuthorName} {item.AuthorSurname}");
+        }
+
+        public void LoadGenres()
+        {
+            List<Genre> genres = dbContext.Genres.ToList();
+            foreach (var item in genres) genre_combobox.Items.Add(item.GenreName);
+        }
+
+        private void UpdateButtonState()
+        {
+            search_button.IsEnabled = (author_combobox.SelectedItem == null &&
+                                genre_combobox.SelectedItem == null &&
+                                string.IsNullOrEmpty(bookName_textBox.Text)) ? false : true;
+        }
+
+        private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateButtonState();
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            IEnumerable<Book_> books_ = GetBookDetails();
+            if (author_combobox.SelectedItem != null)
+                books_ = books_.Where(b => b.Author == author_combobox.SelectedItem.ToString());
+            if (genre_combobox.SelectedItem != null)
+                books_ = books_.Where(b => b.Genre == genre_combobox.SelectedItem.ToString());
+            if (!string.IsNullOrEmpty(bookName_textBox.Text))
+                books_ = books_.Where(b => b.Name.Contains(bookName_textBox.Text));
+            listBox.ItemsSource = books_ ?? null;
+        }
+
+        private void addBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            addBookWindow window = new addBookWindow();
+            window.ShowDialog();
+            LoadBooks();
         }
     }
 }
