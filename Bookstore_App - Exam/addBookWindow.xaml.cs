@@ -50,5 +50,26 @@ namespace Bookstore_App___Exam
             List<Genre> genres = dbContext.Genres.ToList();
             foreach (var item in genres) genre_combobox.Items.Add(item.GenreName);
         }
+
+        private void addPublisherButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
+
+        private void addGenreButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
+
+        private void addAuthorButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
     }
 }
