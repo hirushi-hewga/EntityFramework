@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Bookstore_Data_Access\Bookstore_Data_Access.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
+
 </Project>
