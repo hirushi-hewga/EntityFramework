@@ -110,5 +110,26 @@ namespace Bookstore_App___Exam
             window.ShowDialog();
             LoadBooks();
         }
+
+        private void editBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
+
+        private void deleteBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
+
+        private void writeOffBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            //addBookWindow window = new addBookWindow();
+            //window.ShowDialog();
+            //LoadBooks();
+        }
     }
 }
