@@ -71,5 +71,10 @@ namespace Bookstore_App___Exam
             //window.ShowDialog();
             //LoadBooks();
         }
+
+        private void addBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

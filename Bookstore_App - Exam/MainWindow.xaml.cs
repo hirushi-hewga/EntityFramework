@@ -98,7 +98,9 @@ namespace Bookstore_App___Exam
             if (genre_combobox.SelectedItem != null)
                 books_ = books_.Where(b => b.Genre == genre_combobox.SelectedItem.ToString());
             if (!string.IsNullOrEmpty(bookName_textBox.Text))
-                books_ = books_.Where(b => b.Name.Contains(bookName_textBox.Text));
+                books_ = books_.Where(b => b.Name.Contains(bookName_textBox.Text) || 
+                                      b.Name.ToLower().Contains(bookName_textBox.Text) ||
+                                      b.Name.ToUpper().Contains(bookName_textBox.Text));
             listBox.ItemsSource = books_ ?? null;
         }
 

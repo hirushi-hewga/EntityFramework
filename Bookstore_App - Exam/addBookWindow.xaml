@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Bookstore_App___Exam"
         mc:Ignorable="d"
         Title="addBookWindow" Height="650" Width="500">
-    <Grid>
+    <Grid Background="DarkGreen">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>

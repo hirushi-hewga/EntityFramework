@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Bookstore_App___Exam"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="500">
-    <Grid>
+    <Grid Background="DarkGreen">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -16,6 +16,7 @@
         
         <TextBlock Text="Книгарня" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="8"/>
 
+        <Border Grid.Row="1" CornerRadius="40,40,0,0" Background="Gray"/>
         <StackPanel Grid.Row="1">
         
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -38,41 +39,52 @@
             </StackPanel>
 
         </StackPanel>
+        
+        <Border Grid.Row="2" Background="Gray"></Border>
 
-        <ScrollViewer Width="auto" Grid.Row="2" Margin="5,10" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Width="auto" Grid.Row="2" Margin="5,10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="Gray">
 
-            <ListBox x:Name="listBox" Padding="5" IsHitTestVisible="False">
+            <ListBox x:Name="listBox" Padding="5">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel HorizontalAlignment="Center" IsHitTestVisible="False" Margin="0,5,0,0">
-                            <Border BorderBrush="DarkGray" BorderThickness="1" Width="200" HorizontalAlignment="Left" Margin="0,0,0,5"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Назва :"/>
-                                <TextBlock Text="{Binding Name}"/>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel HorizontalAlignment="Center" Margin="0,5,0,0" IsHitTestVisible="False">
+                                
+                                <Border BorderBrush="DarkGray" BorderThickness="1" Width="300" HorizontalAlignment="Left" Margin="0,0,0,5"/>
+                                
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Назва :"/>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Кількість сторінок :"/>
+                                    <TextBlock Text="{Binding NumberOfPages}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Дата випуску :"/>
+                                    <TextBlock Text="{Binding YearOfRelease}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Продовження книги :"/>
+                                    <TextBlock Text="{Binding ContinuationBook}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Background="AliceBlue">
+                                    <TextBlock Margin="5,0,5,0" Text="Жанр :"/>
+                                    <TextBlock Text="{Binding Genre}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Автор :"/>
+                                    <TextBlock Text="{Binding Author}"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" Text="Видавець :"/>
+                                    <TextBlock Text="{Binding Publisher}"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Кількість сторінок :"/>
-                                <TextBlock Text="{Binding NumberOfPages}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Дата випуску :"/>
-                                <TextBlock Text="{Binding YearOfRelease}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Продовження книги :"/>
-                                <TextBlock Text="{Binding ContinuationBook}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Background="AliceBlue">
-                                <TextBlock Margin="5,0,5,0" Text="Жанр :"/>
-                                <TextBlock Text="{Binding Genre}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Автор :"/>
-                                <TextBlock Text="{Binding Author}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="5,0,5,0" Text="Видавець :"/>
-                                <TextBlock Text="{Binding Publisher}"/>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Button Margin="5" Content="Редагувати"/>
+                                <Button Margin="5" Content="Списати"/>
+                                <Button Margin="5" Content="Видалити"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
@@ -81,7 +93,9 @@
 
         </ScrollViewer>
 
-        <Button Grid.Row="3" Content="Додати книгу" Margin="0,10" Width="300" FontWeight="Bold" FontSize="20" Click="addBookButton_Click"></Button>
+        <StackPanel Grid.Row="3" Background="Gray">
+            <Button Content="Додати книгу" Margin="0,10" Width="300" FontWeight="Bold" FontSize="20" Click="addBookButton_Click"/>
+        </StackPanel>
 
     </Grid>
 </Window>
