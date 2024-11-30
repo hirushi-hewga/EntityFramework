@@ -113,23 +113,25 @@ namespace Bookstore_App___Exam
 
         private void editBookButton_Click(object sender, RoutedEventArgs e)
         {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
+            Button button = sender as Button;
+            var book = button.DataContext as Book_;
+            MessageBox.Show(book.Name);
             //LoadBooks();
         }
 
         private void deleteBookButton_Click(object sender, RoutedEventArgs e)
         {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
-            //LoadBooks();
+            Button button = sender as Button;
+            var book = button.DataContext as Book_;
+            dbContext.Books.Remove(dbContext.Books.FirstOrDefault(b => b.BookName == book.Name));
+            dbContext.SaveChanges();
+            LoadBooks();
         }
 
-        private void writeOffBookButton_Click(object sender, RoutedEventArgs e)
-        {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
-            //LoadBooks();
-        }
+        //private void writeOffBookButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    
+        //    LoadBooks();
+        //}
     }
 }
