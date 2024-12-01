@@ -63,6 +63,7 @@ namespace Bookstore_App___Exam
                     Author = $"{b.Author.AuthorName} {b.Author.AuthorSurname}",
                     Publisher = b.Publisher.PublisherName
                 })
+                .OrderBy(b => b.Name)
                 .ToList();
         }
 
@@ -115,8 +116,9 @@ namespace Bookstore_App___Exam
         {
             Button button = sender as Button;
             var book = button.DataContext as Book_;
-            MessageBox.Show(book.Name);
-            //LoadBooks();
+            editBookWindow window = new editBookWindow(book.Name);
+            window.ShowDialog();
+            LoadBooks();
         }
 
         private void deleteBookButton_Click(object sender, RoutedEventArgs e)
@@ -127,11 +129,5 @@ namespace Bookstore_App___Exam
             dbContext.SaveChanges();
             LoadBooks();
         }
-
-        //private void writeOffBookButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    
-        //    LoadBooks();
-        //}
     }
 }

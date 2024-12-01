@@ -1,0 +1,57 @@
+﻿<Window x:Class="Bookstore_App___Exam.editBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bookstore_App___Exam"
+        mc:Ignorable="d"
+        Title="editBookWindow" Height="650" Width="500">
+    <Grid Background="DarkGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text="Книгарня" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="8"/>
+
+
+        <Border Grid.Row="1" CornerRadius="40,40,0,0" Background="Gray">
+
+        </Border>
+
+
+        <StackPanel Grid.Row="2" Background="Gray">
+
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Background="Gray">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <TextBlock Text="Publisher :"  Margin="20,6,0,6" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="Genre :"  Margin="20,6,0,6" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock Text="Author :"  Margin="20,6,0,6" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <ComboBox x:Name="publisher_combobox" Width="80" Margin="20,5"></ComboBox>
+                    <ComboBox x:Name="genre_combobox" Width="80" Margin="20,5"></ComboBox>
+                    <ComboBox x:Name="author_combobox" Width="80" Margin="20,5"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Publisher" FontWeight="Bold" FontSize="15"/>
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Genre" FontWeight="Bold" FontSize="15"/>
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Author" FontWeight="Bold" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="4" Background="Gray">
+            <Button Grid.Row="3" Content="Зберегти" Margin="0,10" Width="300" FontWeight="Bold" FontSize="20" Click="addBookButton_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

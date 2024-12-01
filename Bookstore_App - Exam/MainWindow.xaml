@@ -82,9 +82,8 @@
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                <Button Margin="5" Content="Редагувати" Click="editBookButton_Click"/>
-                                <Button Margin="5" Content="Видалити" Click="deleteBookButton_Click"/>
-                                <Button Margin="5" Content="Списати" Click="writeOffBookButton_Click"/>
+                                <Button Margin="8" Content="Редагувати" Click="editBookButton_Click"/>
+                                <Button Margin="8" Content="Видалити" Click="deleteBookButton_Click"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
