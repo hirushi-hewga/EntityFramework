@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -25,11 +25,6 @@
 
 
         <StackPanel Grid.Row="2" Background="Gray">
-
-        </StackPanel>
-
-
-        <StackPanel Grid.Row="3" Background="Gray">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <TextBlock Text="Publisher :"  Margin="20,6,0,6" FontWeight="Bold" FontSize="15" HorizontalAlignment="Right"></TextBlock>
@@ -46,6 +41,18 @@
                     <Button Height="30" Width="120" Margin="35,5" Content="Add Genre" FontWeight="Bold" FontSize="15"/>
                     <Button Height="30" Width="120" Margin="35,5" Content="Add Author" FontWeight="Bold" FontSize="15"/>
                 </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Background="Gray">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Width="110" Margin="10,10,10,0" Text="Вартість :" FontWeight="Bold" FontSize="15"></TextBlock>
+                <TextBlock Width="110" Margin="10,10,10,0" Text="Ціна :" FontWeight="Bold" FontSize="15"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="110" Margin="10,0,10,20" FontWeight="Bold" FontSize="20"></TextBox>
+                <TextBox Width="110" Margin="10,0,10,20" FontWeight="Bold" FontSize="20"></TextBox>
             </StackPanel>
         </StackPanel>
 
