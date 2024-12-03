@@ -76,21 +76,21 @@ namespace Bookstore_App___Exam
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadPublishers();
         }
 
         private void addGenreButton_Click(object sender, RoutedEventArgs e)
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadGenres();
         }
 
         private void addAuthorButton_Click(object sender, RoutedEventArgs e)
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadAuthors();
         }
 
         private void addBookButton_Click(object sender, RoutedEventArgs e)

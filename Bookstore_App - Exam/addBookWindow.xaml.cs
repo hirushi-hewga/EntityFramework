@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -19,6 +20,7 @@ namespace Bookstore_App___Exam
     /// <summary>
     /// Interaction logic for addBookWindow.xaml
     /// </summary>
+
     public partial class addBookWindow : Window
     {
         public BookstoreDbContext dbContext = new BookstoreDbContext();
@@ -86,9 +88,29 @@ namespace Bookstore_App___Exam
 
         private void addAuthorButton_Click(object sender, RoutedEventArgs e)
         {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
-            //LoadAuthors();
+            InputDialogWindow inputDialog = new InputDialogWindow();
+
+            string name = null;
+            string surname = null;
+
+            if (inputDialog.ShowDialog() == true)
+            {
+                name = inputDialog.FirstName;
+                surname = inputDialog.LastName;
+            }
+
+            if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(surname))
+            {
+                dbContext.Authors.Add(new Author()
+                {
+                    AuthorName = name,
+                    AuthorSurname = surname
+                });
+                dbContext.SaveChanges();
+                LoadAuthors();
+                return;
+            }
+            MessageBox.Show("Invalid Input");
         }
 
         private void addBookButton_Click(object sender, RoutedEventArgs e)
