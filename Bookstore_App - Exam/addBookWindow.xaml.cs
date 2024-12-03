@@ -28,6 +28,17 @@ namespace Bookstore_App___Exam
             LoadPublishers();
             LoadAuthors();
             LoadGenres();
+            LoadDate();
+        }
+
+        public void LoadDate()
+        {
+            year_combobox.Items.Clear();
+            month_combobox.Items.Clear();
+            day_combobox.Items.Clear();
+            for (int i = 1950; i <= DateTime.Now.Year; i++) year_combobox.Items.Add(i.ToString());
+            for (int i = 1; i <= 12; i++) month_combobox.Items.Add(i.ToString());
+            for (int i = 1; i <= 31; i++) day_combobox.Items.Add(i.ToString());
         }
 
         public void LoadPublishers()
@@ -55,21 +66,21 @@ namespace Bookstore_App___Exam
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadPublishers();
         }
 
         private void addGenreButton_Click(object sender, RoutedEventArgs e)
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadGenres();
         }
 
         private void addAuthorButton_Click(object sender, RoutedEventArgs e)
         {
             //addBookWindow window = new addBookWindow();
             //window.ShowDialog();
-            //LoadBooks();
+            //LoadAuthors();
         }
 
         private void addBookButton_Click(object sender, RoutedEventArgs e)
