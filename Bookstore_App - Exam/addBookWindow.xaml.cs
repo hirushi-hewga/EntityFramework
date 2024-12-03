@@ -29,6 +29,7 @@ namespace Bookstore_App___Exam
             LoadAuthors();
             LoadGenres();
             LoadDate();
+            LoadContinuation();
         }
 
         public void LoadDate()
@@ -39,6 +40,13 @@ namespace Bookstore_App___Exam
             for (int i = 1950; i <= DateTime.Now.Year; i++) year_combobox.Items.Add(i.ToString());
             for (int i = 1; i <= 12; i++) month_combobox.Items.Add(i.ToString());
             for (int i = 1; i <= 31; i++) day_combobox.Items.Add(i.ToString());
+        }
+
+        public void LoadContinuation()
+        {
+            continuation_combobox.Items.Clear();
+            List<Book> books = dbContext.Books.ToList();
+            foreach (var item in books) continuation_combobox.Items.Add(item.BookName);
         }
 
         public void LoadPublishers()
