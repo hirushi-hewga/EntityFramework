@@ -1,17 +1,15 @@
-﻿<Window x:Class="Bookstore_App___Exam.InputDialogWindow"
+﻿<Window x:Class="Bookstore_App___Exam.InputDialogWindow2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookstore_App___Exam"
         mc:Ignorable="d"
-        Title="InputDialogWindow" Height="200" Width="300">
+            Title="InputDialogWindow" Height="150" Width="300">
     <Grid>
         <StackPanel Width="auto" HorizontalAlignment="Center">
-            <Label Content="Ім'я автора :" HorizontalAlignment="Left" FontWeight="Bold"/>
-            <TextBox x:Name="FirstNameTextBox" Width="200"/>
-            <Label Content="Прізвище автора :" HorizontalAlignment="Left" FontWeight="Bold"/>
-            <TextBox x:Name="LastNameTextBox" Width="200" />
+            <Label x:Name="TextBlock_" HorizontalAlignment="Left" FontWeight="Bold"/>
+            <TextBox x:Name="TextBox_" Width="200"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">

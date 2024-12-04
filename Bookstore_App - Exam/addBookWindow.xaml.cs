@@ -73,16 +73,51 @@ namespace Bookstore_App___Exam
 
         private void addPublisherButton_Click(object sender, RoutedEventArgs e)
         {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
-            //LoadPublishers();
+            InputDialogWindow2 inputDialog = new InputDialogWindow2("Назва видавця :");
+
+            string publisher = null;
+
+            if (inputDialog.ShowDialog() == true)
+            {
+                publisher = inputDialog.Content;
+            }
+
+            if (!string.IsNullOrEmpty(publisher))
+            {
+                dbContext.Publishers.Add(new Publisher()
+                {
+                    PublisherName = publisher
+                });
+                dbContext.SaveChanges();
+                LoadPublishers();
+                return;
+            }
+            MessageBox.Show("Invalid Input");
+            
         }
 
         private void addGenreButton_Click(object sender, RoutedEventArgs e)
         {
-            //addBookWindow window = new addBookWindow();
-            //window.ShowDialog();
-            //LoadGenres();
+            InputDialogWindow2 inputDialog = new InputDialogWindow2("Назва жанру :");
+
+            string genre = null;
+
+            if (inputDialog.ShowDialog() == true)
+            {
+                genre = inputDialog.Content;
+            }
+
+            if (!string.IsNullOrEmpty(genre))
+            {
+                dbContext.Genres.Add(new Genre()
+                {
+                    GenreName = genre
+                });
+                dbContext.SaveChanges();
+                LoadGenres();
+                return;
+            }
+            MessageBox.Show("Invalid Input");
         }
 
         private void addAuthorButton_Click(object sender, RoutedEventArgs e)
