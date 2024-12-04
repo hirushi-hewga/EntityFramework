@@ -22,8 +22,8 @@ namespace Bookstore_App___Exam
         public string Content { get; private set; }
         public InputDialogWindow2(string label_content)
         {
-            TextBlock_.Content = label_content;
             InitializeComponent();
+            TextBlock_.Content = label_content;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)

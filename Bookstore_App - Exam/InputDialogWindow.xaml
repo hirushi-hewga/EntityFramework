@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bookstore_App___Exam"
         mc:Ignorable="d"
-        Title="InputDialogWindow" Height="200" Width="300">
+        Title="InputWindow" Height="200" Width="300">
     <Grid>
         <StackPanel Width="auto" HorizontalAlignment="Center">
             <Label Content="Ім'я автора :" HorizontalAlignment="Left" FontWeight="Bold"/>
