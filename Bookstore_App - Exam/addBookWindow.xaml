@@ -59,9 +59,9 @@
                     <ComboBox x:Name="author_combobox" Width="80" Margin="20,5"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                    <Button Height="30" Width="120" Margin="35,5" Content="Add Publisher" FontWeight="Bold" FontSize="15"/>
-                    <Button Height="30" Width="120" Margin="35,5" Content="Add Genre" FontWeight="Bold" FontSize="15"/>
-                    <Button Height="30" Width="120" Margin="35,5" Content="Add Author" FontWeight="Bold" FontSize="15"/>
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Publisher" FontWeight="Bold" FontSize="15" Click="addPublisherButton_Click"/>
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Genre" FontWeight="Bold" FontSize="15" Click="addGenreButton_Click"/>
+                    <Button Height="30" Width="120" Margin="35,5" Content="Add Author" FontWeight="Bold" FontSize="15" Click="addAuthorButton_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -99,7 +98,7 @@ namespace Bookstore_App___Exam
                 surname = inputDialog.LastName;
             }
 
-            if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(surname))
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(surname))
             {
                 dbContext.Authors.Add(new Author()
                 {
