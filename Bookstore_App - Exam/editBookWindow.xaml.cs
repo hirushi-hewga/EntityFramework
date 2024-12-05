@@ -150,7 +150,64 @@ namespace Bookstore_App___Exam
 
         private void addBookButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            try
+            {
+                string bookName = bookName_textBox.Text;
+                int numberOfPages = string.IsNullOrWhiteSpace(numberOfPages_textBox.Text) ? 0 : int.Parse(numberOfPages_textBox.Text);
+                int year = year_combobox.SelectedItem == null ? 0 : int.Parse(year_combobox.SelectedItem.ToString()!);
+                int month = month_combobox.SelectedItem == null ? 0 : int.Parse(month_combobox.SelectedItem.ToString()!);
+                int day = day_combobox.SelectedItem == null ? 0 : int.Parse(day_combobox.SelectedItem.ToString()!);
+                string continuation = continuation_combobox.SelectedItem == null ? "-" : continuation_combobox.SelectedItem.ToString()!;
+                string publisher = publisher_combobox.SelectedItem == null ? "" : publisher_combobox.SelectedItem.ToString()!;
+                string genre = genre_combobox.SelectedItem == null ? "" : genre_combobox.SelectedItem.ToString()!;
+                string author = author_combobox.SelectedItem == null ? "" : author_combobox.SelectedItem.ToString()!;
+                float cost = string.IsNullOrWhiteSpace(Cost_textBox.Text) ? 0f : float.Parse(Cost_textBox.Text);
+                float price = string.IsNullOrWhiteSpace(Price_textBox.Text) ? 0f : float.Parse(Price_textBox.Text);
+                bool isValidData = false;
+
+                if (string.IsNullOrWhiteSpace(bookName)) MessageBox.Show("Назву книги не ввевдено");
+                else if (numberOfPages <= 0) MessageBox.Show("Кількість сторінок повинна бути більше 0.");
+                else if (year == 0) MessageBox.Show("Рік не вибрано");
+                else if (month == 0) MessageBox.Show("Місяць не вибрано");
+                else if (day == 0) MessageBox.Show("День не вибрано");
+                else if (string.IsNullOrWhiteSpace(publisher)) MessageBox.Show("Видавця не вибрано");
+                else if (string.IsNullOrWhiteSpace(genre)) MessageBox.Show("Жанр не вибрано");
+                else if (string.IsNullOrWhiteSpace(author)) MessageBox.Show("Автора не вибрано");
+                else if (cost <= 0f) MessageBox.Show("Вартість повинна бути більше 0.");
+                else if (price <= 0f) MessageBox.Show("Ціна повинна бути більше 0.");
+                else isValidData = true;
+
+                if (isValidData)
+                {
+                    DateTime date;
+                    if (!DateTime.TryParse($"{year}-{month}-{day}", out date))
+                    {
+                        MessageBox.Show("Невірно введено дату");
+                        return;
+                    }
+
+                    dbContext.Books.Add(new Book()
+                    {
+                        BookName = bookName,
+                        NumberOfPages = numberOfPages,
+                        YearOfRelease = date,
+                        Cost = cost,
+                        Price = price,
+                        ContinuationBook = continuation,
+                        AuthorId = dbContext.Authors.FirstOrDefault(a => $"{a.AuthorName} {a.AuthorSurname}" == author).AuthorId,
+                        PublisherId = dbContext.Publishers.FirstOrDefault(p => p.PublisherName == publisher).PublisherId,
+                        GenreId = dbContext.Genres.FirstOrDefault(g => g.GenreName == genre).GenreId
+                    });
+
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Книгу додано");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
