@@ -194,7 +194,7 @@ namespace Bookstore_App___Exam
                         Cost = cost,
                         Price = price,
                         ContinuationBook = continuation,
-                        AuthorId = dbContext.Authors.FirstOrDefault(a => $"{a.AuthorName} {a.AuthorSurname}" == author).AuthorId,
+                        AuthorId = dbContext.Authors.FirstOrDefault(a => "{a.AuthorName} {a.AuthorSurname}" == author).AuthorId,
                         PublisherId = dbContext.Publishers.FirstOrDefault(p => p.PublisherName == publisher).PublisherId,
                         GenreId = dbContext.Genres.FirstOrDefault(g => g.GenreName == genre).GenreId
                     });
